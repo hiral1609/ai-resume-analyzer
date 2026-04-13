@@ -39,7 +39,7 @@ A professional full-stack application that leverages OpenAI and Google Gemini to
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ai-resume-analyzer.git
+git clone https://github.com/hiral1609/ai-resume-analyzer.git
 cd ai-resume-analyzer
 ```
 
