@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply m-0 p-0 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl transition-colors duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-sky-600 dark:bg-sky-500 text-white rounded-xl font-bold hover:bg-sky-700 dark:hover:bg-sky-400 transition-all shadow-lg active:scale-95 cursor-pointer flex items-center justify-center;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white dark:bg-slate-800 text-sky-600 dark:text-sky-400 border border-sky-100 dark:border-sky-900/50 rounded-xl font-bold hover:bg-sky-50 dark:hover:bg-slate-700 transition-all shadow-sm active:scale-95 cursor-pointer flex items-center justify-center;
+  }
+}
