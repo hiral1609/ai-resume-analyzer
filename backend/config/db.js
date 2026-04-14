@@ -8,7 +8,10 @@ let isSqlite = false;
 
 if (!process.env.DATABASE_URL || process.env.DATABASE_URL.includes('sqlite')) {
   isSqlite = true;
-  const dbPath = path.resolve(__dirname, '../../database.sqlite');
+  let dbPath = path.resolve(__dirname, '../../database.sqlite');
+  if (process.env.RENDER) {
+    dbPath = '/tmp/database.sqlite';
+  }
   db = new sqlite3.Database(dbPath, (err) => {
     if (err) console.error('Sqlite connection error:', err);
     else console.log('Connected to SQLite database at', dbPath);
