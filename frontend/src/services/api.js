@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-// Fallback for online mode: 'https://ai-resume-analyzer-api-8wdh.onrender.com/api'
+const API_URL = import.meta.env.VITE_API_URL || 'https://ai-resume-analyzer-server-giet.onrender.com/api';
+// Local development: 'http://localhost:5000/api'
 
 const api = axios.create({
   baseURL: API_URL,
