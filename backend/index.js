@@ -29,6 +29,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/resumes', resumeRoutes);
 app.use('/api/analysis', analysisRoutes);
 
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'OK', environment: process.env.NODE_ENV || 'production' });
+});
+
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });
 });
