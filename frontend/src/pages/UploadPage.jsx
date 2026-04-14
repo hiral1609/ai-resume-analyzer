@@ -139,15 +139,15 @@ const UploadPage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+                <div className="flex flex-col space-y-6">
                   <div className="flex items-center gap-4">
                     <span className="w-10 h-10 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl flex items-center justify-center font-black text-lg">2</span>
                     <label className="text-2xl font-black text-slate-900 dark:text-white">Upload Resume</label>
                   </div>
                   <div 
                     {...getRootProps()} 
-                    className={`border-4 border-dashed rounded-[3rem] p-10 flex flex-col items-center justify-center transition-all cursor-pointer min-h-[350px] shadow-sm ${
+                    className={`flex-grow border-4 border-dashed rounded-[3rem] p-10 flex flex-col items-center justify-center transition-all cursor-pointer min-h-[400px] shadow-sm ${
                       isDragActive ? 'border-primary-500 bg-primary-50 dark:bg-primary-950/30' : 'border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary-300'
                     }`}
                   >
@@ -169,18 +169,20 @@ const UploadPage = () => {
                     )}
                   </div>
                 </div>
-
-                <div className="space-y-6">
+ 
+                <div className="flex flex-col space-y-6">
                   <div className="flex items-center gap-4">
                     <span className="w-10 h-10 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl flex items-center justify-center font-black text-lg">3</span>
                     <label className="text-2xl font-black text-slate-900 dark:text-white">Job Description</label>
                   </div>
-                  <textarea
-                    className="w-full h-full min-h-[350px] p-8 bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 rounded-[3rem] focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 resize-none text-lg font-bold dark:text-white transition-all shadow-sm"
-                    placeholder="Paste the target job description here..."
-                    value={jobDescription}
-                    onChange={(e) => setJobDescription(e.target.value)}
-                  />
+                  <div className="flex-grow">
+                    <textarea
+                      className="w-full h-full min-h-[400px] p-8 bg-white dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 rounded-[3rem] focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 resize-none text-lg font-bold dark:text-white transition-all shadow-sm"
+                      placeholder="Paste the target job description here..."
+                      value={jobDescription}
+                      onChange={(e) => setJobDescription(e.target.value)}
+                    />
+                  </div>
                 </div>
               </div>
 
