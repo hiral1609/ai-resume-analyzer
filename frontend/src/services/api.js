@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://ai-resume-analyzer-server-giet.onrender.com/api';
-// Local development: 'http://localhost:5000/api'
+const API_URL = 'https://ai-resume-analyzer-server-giet.onrender.com/api';
+console.log('🚀 Final App connecting to:', API_URL);
+// development fallback removed for zero-error demo
 
 const api = axios.create({
   baseURL: API_URL,
