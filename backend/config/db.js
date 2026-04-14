@@ -1,4 +1,3 @@
-const sqlite3 = require('sqlite3').verbose();
 const { Pool } = require('pg');
 const path = require('path');
 require('dotenv').config();
@@ -8,6 +7,7 @@ let isSqlite = false;
 
 if (!process.env.DATABASE_URL || process.env.DATABASE_URL.includes('sqlite')) {
   isSqlite = true;
+  const sqlite3 = require('sqlite3').verbose();
   let dbPath = path.resolve(__dirname, '../../database.sqlite');
   if (process.env.RENDER) {
     dbPath = '/tmp/database.sqlite';
